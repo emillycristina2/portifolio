@@ -1,1 +1,42 @@
-
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meu Portfólio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #007bff;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Olá, eu sou João Silva!</h1>
+  <p>Desenvolvedor Web | Python | JavaScript</p>
+  <h2>Meus projetos</h2>
+  <ul>
+    <li><a href="https://github.com/joaosilva/meu-projeto">Projeto 1</a></li>
+    <li><a href="https://github.com/joaosilva/outro-projeto">Projeto 2</a></li>
+  </ul>
+</body>
+</html>
