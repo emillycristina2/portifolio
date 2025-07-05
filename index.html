@@ -6,6 +6,104 @@
   <title>Portfólio - Emilly Cristina</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      background-color: #fff;
+      color: #333;
+    }
+
+    header {
+      background-color: #b48cd2;
+      color: white;
+      padding: 1rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .menu li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background-color: #f7f3fc;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .sobre, .projetos, .contato {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .projetos h2, .sobre h2, .contato h2 {
+      margin-bottom: 1rem;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .tab-button {
+      padding: 10px 20px;
+      background-color: #e0e0e0;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .tab-button.active {
+      background-color: #b48cd2;
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 1rem;
+      background-color: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #b48cd2;
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
 
@@ -46,24 +144,27 @@
   <section id="projetos" class="projetos">
     <h2>🛠️ Meus Projetos</h2>
 
-    <div class="card">
+    <div class="tabs">
+      <button class="tab-button active" data-tab="projeto1">Projeto 1</button>
+      <button class="tab-button" data-tab="projeto2">Projeto 2</button>
+      <button class="tab-button" data-tab="projeto3">Projeto 3</button>
+    </div>
+
+    <div class="tab-content active" id="projeto1">
       <h3>Projeto 1</h3>
-      <p>Descrição breve do projeto. Pode ser um site, app ou outro trabalho criativo.</p>
+      <p>Site criado com HTML e CSS. Um portfólio pessoal com design limpo e moderno.</p>
+      <a href="https://emillycristina2.github.io/trabalho01/" target="_blank">🔗 Ver Projeto</a>
     </div>
 
-    <div class="card">
+    <div class="tab-content" id="projeto2">
       <h3>Projeto 2</h3>
-      <p>Descrição breve do projeto. Fale sobre o que você desenvolveu e o que aprendeu.</p>
+      <p>Landing page com tema livre. Exploração de layout e cores com HTML e Flexbox.</p>
     </div>
 
-    <!-- Exemplo com link -->
-    <!--
-    <div class="card">
-      <h3>Portfólio Online</h3>
-      <p>Site criado com HTML e CSS mostrando meus projetos e aprendizados.</p>
-      <a href="https://emillycristina2.github.io/trabalho01/" target="_blank">Ver projeto</a>
+    <div class="tab-content" id="projeto3">
+      <h3>Projeto 3</h3>
+      <p>Mini blog ou página criativa usando CSS Grid e animações suaves.</p>
     </div>
-    -->
   </section>
 
   <section id="contato" class="contato">
@@ -74,6 +175,23 @@
   <footer>
     <p>© 2025 Emilly Cristina. Todos os direitos reservados.</p>
   </footer>
+
+  <script>
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const tabId = button.getAttribute('data-tab');
+
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        button.classList.add('active');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
