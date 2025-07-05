@@ -2,19 +2,10 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sobre Mim - Emilly Cristina</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfólio - Emilly Cristina</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary-color: #b48cd2;
-      --primary-hover: #9b6ac1;
-      --background-color: #f7f3fc;
-      --text-color: #333;
-      --card-bg: #fff;
-      --shadow: rgba(0, 0, 0, 0.1);
-    }
-
     * {
       margin: 0;
       padding: 0;
@@ -23,90 +14,140 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: var(--background-color);
-      color: var(--text-color);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 1rem;
+      line-height: 1.6;
+      background-color: #fff;
+      color: #333;
     }
 
-    .container {
-      max-width: 900px;
-      background: var(--card-bg);
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 5px 15px var(--shadow);
+    header {
+      background-color: #b48cd2;
+      color: white;
+      padding: 1rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .menu li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background-color: #f7f3fc;
+      padding: 3rem 1rem;
       text-align: center;
     }
 
-    h1 {
-      color: var(--primary-color);
-      margin-bottom: 1rem;
-      font-size: 2.5rem;
-      font-weight: 700;
+    .sobre, .projetos, .contato {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-    .foto {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid var(--primary-color);
-      margin-bottom: 1.5rem;
-      box-shadow: 0 4px 10px var(--shadow);
+    .projetos h2, .sobre h2, .contato h2 {
+      margin-bottom: 1rem;
     }
 
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
+    .card {
+      background-color: #f9f9f9;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       margin-bottom: 1rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      color: #555;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #b48cd2;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .card a:hover {
+      background-color: #9b6ac1;
     }
 
     footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #777;
-    }
-
-    /* Responsividade */
-    @media (max-width: 600px) {
-      .container {
-        padding: 1.5rem;
-      }
-      h1 {
-        font-size: 2rem;
-      }
-      .foto {
-        width: 140px;
-        height: 140px;
-      }
-      p {
-        font-size: 1rem;
-      }
+      text-align: center;
+      padding: 1rem;
+      background-color: #b48cd2;
+      color: white;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
 
-  <div class="container" role="main">
-    <h1>Emilly Cristina</h1>
-    <img src="sua-foto-aqui.jpg" alt="Foto de Emilly Cristina" class="foto" />
-    <p>Olá! Eu sou a Emilly Cristina, uma pessoa apaixonada por criatividade, natureza e tecnologia. Desde pequena, sempre fui curiosa, observadora e criativa; gostava de desenhar, escrever e transformar ideias em algo bonito e com significado.</p>
-    <p>Tenho interesse em design, desenvolvimento web e tudo que envolve expressão visual e comunicação. Acredito que a tecnologia pode ser usada para aproximar pessoas, facilitar a vida e transmitir emoções.</p>
-    <p>No meu tempo livre, gosto de ouvir música, desenhar, refletir, estar em contato com a natureza e os animais. Valorizo a empatia, a simplicidade e o crescimento pessoal.</p>
-    <p>Meu objetivo é crescer com verdade, criatividade e propósito, criando projetos com alma, significado e impacto positivo.</p>
-  </div>
+  <header>
+    <nav>
+      <h1 class="logo">🌸 Emilly Cristina</h1>
+      <ul class="menu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Olá! Eu sou Emilly Cristina 💻</h2>
+      <p>Estudante | Apaixonada por Criatividade, Tecnologia e Design</p>
+    </div>
+  </section>
+
+  <section id="sobre" class="sobre">
+    <h2>✨ Sobre Mim</h2>
+    <p>
+      Me chamo Emilly Cristina e sou apaixonada por criatividade, natureza e tecnologia. Desde pequena, sempre fui curiosa, observadora e criativa gostava de desenhar, escrever e transformar ideias em algo bonito e com significado.
+    </p>
+    <p>
+      Tenho interesse em design, desenvolvimento web e tudo que envolve expressão visual e comunicação. Acredito que a tecnologia pode ser usada para aproximar pessoas, facilitar a vida e transmitir emoções.
+    </p>
+    <p>
+      No tempo livre, gosto de ouvir música, desenhar, refletir, estar em contato com a natureza e os animais. Valorizo a empatia, a simplicidade e o crescimento pessoal.
+    </p>
+    <p>
+      Meu objetivo é crescer com verdade, criatividade e propósito, criando projetos com alma, significado e impacto positivo.
+    </p>
+  </section>
+
+  <section id="projetos" class="projetos">
+    <h2>🛠️ Meu Projeto</h2>
+
+    <div class="card">
+      <h3>Portfólio Online</h3>
+      <p>Este é um site criado com HTML e CSS, feito para mostrar meu trabalho como desenvolvedora iniciante. Ele apresenta uma estrutura simples, bonita e organizada.</p>
+      <a href="https://emillycristina2.github.io/trabalho01/" target="_blank">🔗 Ver Projeto</a>
+    </div>
+  </section>
+
+  <section id="contato" class="contato">
+    <h2>📧 Contato</h2>
+    <p>Email: <a href="mailto:emillycristinafernandes779@gmail.com">emillycristinafernandes779@gmail.com</a></p>
+  </section>
 
   <footer>
-    © 2025 Emilly Cristina. Todos os direitos reservados.
+    <p>© 2025 Emilly Cristina. Todos os direitos reservados.</p>
   </footer>
 
 </body>
 </html>
-
