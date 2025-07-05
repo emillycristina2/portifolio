@@ -2,105 +2,75 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meu Portfólio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background-color: #222;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav {
-      background-color: #444;
-      display: flex;
-      justify-content: center;
-      padding: 10px;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-    }
-
-    section {
-      padding: 40px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .projeto {
-      background-color: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-left: 5px solid #007acc;
-    }
-
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfólio - Emilly Cristina</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <header>
-    <h1>Seu Nome</h1>
-    <p>Desenvolvedor Web | Front-end | Back-end</p>
+    <nav>
+      <h1 class="logo">MeuPortfólio</h1>
+      <ul class="menu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#projetos">Projetos</a>
-    <a href="#contato">Contato</a>
-  </nav>
+  <section class="hero">
+    <h2>Olá! Eu sou Emilly Cristina</h2>
+    <p>Estudante Apaixonada por criatividade</p>
+  </section>
 
-  <section id="sobre">
+  <section id="sobre" class="sobre">
     <h2>Sobre Mim</h2>
-    <p>Sou um desenvolvedor apaixonado por tecnologia e programação. Tenho experiência em HTML, CSS, JavaScript e outras tecnologias modernas de desenvolvimento web.</p>
+    <p>
+      Me chamo Emilly Cristina e sou apaixonada por criatividade, natureza e tecnologia. Desde pequena, sempre fui curiosa, observadora e criativa gostava de desenhar, escrever e transformar ideias em algo bonito e com significado. Hoje, trago essa essência para tudo o que faço.
+    </p>
+    <p>
+      Tenho interesse em design, desenvolvimento web e tudo que envolve expressão visual e comunicação. Acredito que a tecnologia pode ser usada para aproximar pessoas, facilitar a vida e transmitir emoções, e é isso que me motiva a aprender mais a cada dia.
+    </p>
+    <p>
+      No tempo livre, gosto de ouvir música, desenhar, refletir, estar em contato com a natureza e com os animais. Sou uma pessoa sensível, determinada e sempre aberta a novos aprendizados e desafios. Valorizo a empatia, a simplicidade e o crescimento pessoal.
+    </p>
+    <p>
+      Meu objetivo é crescer com verdade, criatividade e propósito, criando projetos que tenham alma, significado e impacto positivo no mundo.
+    </p>
   </section>
 
-  <section id="projetos">
-    <h2>Projetos</h2>
+  <section id="projetos" class="projetos">
+    <h2>Meus Projetos</h2>
 
-    <div class="projeto">
-      <h3>Projeto 1 - Site Pessoal</h3>
-      <p>Um site pessoal desenvolvido com HTML, CSS e JavaScript para apresentar meu currículo e portfólio.</p>
-      <a href="#" target="_blank">Ver projeto</a>
+    <div class="card">
+      <h3>Projeto 1</h3>
+      <p>Descrição breve do projeto. Pode ser um site, app ou outro trabalho criativo.</p>
     </div>
 
-    <div class="projeto">
-      <h3>Projeto 2 - Aplicação ToDo</h3>
-      <p>Uma aplicação web simples para gerenciamento de tarefas, usando JavaScript puro.</p>
-      <a href="#" target="_blank">Ver projeto</a>
+    <div class="card">
+      <h3>Projeto 2</h3>
+      <p>Descrição breve do projeto. Fale sobre o que você desenvolveu e o que aprendeu.</p>
     </div>
+    
+    <!-- Exemplo com link (opcional) -->
+    <!--
+    <div class="card">
+      <h3>Portfólio Online</h3>
+      <p>Site criado com HTML e CSS mostrando meus projetos e aprendizados.</p>
+      <a href="https://emillycristina2.github.io/trabalho01/" target="_blank">Ver projeto</a>
+    </div>
+    -->
   </section>
 
-  <section id="contato">
+  <section id="contato" class="contato">
     <h2>Contato</h2>
-    <p>Email: seuemail@example.com</p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/seu-perfil" target="_blank">linkedin.com/in/seu-perfil</a></p>
-    <p>GitHub: <a href="https://github.com/seuusuario" target="_blank">github.com/seuusuario</a></p>
+    <p>Email: <a href="mailto:emillycristinafernandes779@gmail.com">emillycristinafernandes779@gmail.com</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Seu Nome. Todos os direitos reservados.</p>
+    <p>© 2025 Emilly Cristina. Todos os direitos reservados.</p>
   </footer>
 
 </body>
 </html>
-
