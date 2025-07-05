@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfólio - Emilly Cristina</title>
-  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
@@ -62,38 +61,28 @@
       margin-bottom: 1rem;
     }
 
-    .tabs {
-      display: flex;
-      gap: 1rem;
+    .card {
+      background-color: #f9f9f9;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       margin-bottom: 1rem;
-      flex-wrap: wrap;
     }
 
-    .tab-button {
-      padding: 10px 20px;
-      background-color: #e0e0e0;
-      border: none;
-      cursor: pointer;
+    .card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #b48cd2;
+      color: white;
       border-radius: 8px;
+      text-decoration: none;
       font-weight: 600;
       transition: background-color 0.3s;
     }
 
-    .tab-button.active {
-      background-color: #b48cd2;
-      color: white;
-    }
-
-    .tab-content {
-      display: none;
-      padding: 1rem;
-      background-color: #f9f9f9;
-      border-radius: 12px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .tab-content.active {
-      display: block;
+    .card a:hover {
+      background-color: #9b6ac1;
     }
 
     footer {
@@ -142,28 +131,12 @@
   </section>
 
   <section id="projetos" class="projetos">
-    <h2>🛠️ Meus Projetos</h2>
+    <h2>🛠️ Meu Projeto</h2>
 
-    <div class="tabs">
-      <button class="tab-button active" data-tab="projeto1">Projeto 1</button>
-      <button class="tab-button" data-tab="projeto2">Projeto 2</button>
-      <button class="tab-button" data-tab="projeto3">Projeto 3</button>
-    </div>
-
-    <div class="tab-content active" id="projeto1">
-      <h3>Projeto 1</h3>
-      <p>Site criado com HTML e CSS. Um portfólio pessoal com design limpo e moderno.</p>
+    <div class="card">
+      <h3>Portfólio Online</h3>
+      <p>Este é um site criado com HTML e CSS, feito para mostrar meu trabalho como desenvolvedora iniciante. Ele apresenta uma estrutura simples, bonita e organizada.</p>
       <a href="https://emillycristina2.github.io/trabalho01/" target="_blank">🔗 Ver Projeto</a>
-    </div>
-
-    <div class="tab-content" id="projeto2">
-      <h3>Projeto 2</h3>
-      <p>Landing page com tema livre. Exploração de layout e cores com HTML e Flexbox.</p>
-    </div>
-
-    <div class="tab-content" id="projeto3">
-      <h3>Projeto 3</h3>
-      <p>Mini blog ou página criativa usando CSS Grid e animações suaves.</p>
     </div>
   </section>
 
@@ -175,23 +148,6 @@
   <footer>
     <p>© 2025 Emilly Cristina. Todos os direitos reservados.</p>
   </footer>
-
-  <script>
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const tabId = button.getAttribute('data-tab');
-
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        tabContents.forEach(content => content.classList.remove('active'));
-
-        button.classList.add('active');
-        document.getElementById(tabId).classList.add('active');
-      });
-    });
-  </script>
 
 </body>
 </html>
