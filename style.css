@@ -1,64 +1,80 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start' // Scroll to the top of the section
-            });
-        }
-        // Close menu on click for mobile
-        const menu = document.getElementById('menu');
-        const hamburger = document.getElementById('hamburger');
-        if (menu.classList.contains('active')) {
-            menu.classList.remove('active');
-            hamburger.classList.remove('active');
-        }
-    });
-});
-
-// Hamburger menu functionality
-const hamburger = document.getElementById('hamburger');
-const menu = document.getElementById('menu');
-
-hamburger.addEventListener('click', () => {
-    menu.classList.toggle('active');
-    hamburger.classList.toggle('active');
-});
-
-// Function to copy email address
-function copyEmail() {
-    const email = "emillycristinafernandes779@gmail.com";
-    navigator.clipboard.writeText(email).then(() => {
-        const messageSpan = document.getElementById('emailMessage');
-        messageSpan.textContent = 'E-mail copiado para a área de transferência!';
-        setTimeout(() => {
-            messageSpan.textContent = '';
-        }, 3000); // Clear message after 3 seconds
-    }).catch(err => {
-        console.error('Falha ao copiar o e-mail:', err);
-        const messageSpan = document.getElementById('emailMessage');
-        messageSpan.textContent = 'Erro ao copiar e-mail. Tente novamente.';
-    });
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-// Back to Top Button functionality
-const backToTopBtn = document.getElementById('backToTopBtn');
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+  color: #333;
+}
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) { // Show button after scrolling 300px
-        backToTopBtn.style.display = 'block';
-    } else {
-        backToTopBtn.style.display = 'none';
-    }
-});
+header {
+  background-color: #6A0DAD; /* Roxo forte */
+  padding: 20px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
-backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
+.navbar {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+  color: #E6CCFF; /* Roxo claro */
+}
+
+main {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+h2 {
+  color: #6A0DAD;
+  margin-bottom: 15px;
+}
+
+a {
+  color: #6A0DAD;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #6A0DAD;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
