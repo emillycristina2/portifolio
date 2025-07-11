@@ -9,12 +9,26 @@
     --text-light: #fff; /* Cor padrão para texto claro */
     --bg-light: #f8f0ff; /* Fundo mais claro para seções */
     --bg-card: #f4eaff; /* Fundo dos cards */
+
+    /* Fontes (se estiver usando Poppins do Google Fonts) */
+    --font-family-primary: 'Poppins', sans-serif;
     --font-family-base: 'Segoe UI', sans-serif;
+
+    /* Tamanhos de fonte */
+    --font-size-base: 1rem; /* 16px */
+    --font-size-lg: 1.2rem;
+    --font-size-xl: 2rem;
+
+    /* Espaçamentos */
     --spacing-xs: 5px;
     --spacing-sm: 10px;
     --spacing-md: 20px;
     --spacing-lg: 60px;
     --spacing-xl: 100px;
+
+    /* Sombras */
+    --shadow-light: 0 4px 12px rgba(0,0,0,0.08); /* Sombra suave para cards */
+    --shadow-hover: 0 12px 25px rgba(0,0,0,0.15); /* Sombra mais intensa no hover */
 }
 
 /* Reset básico */
@@ -24,13 +38,33 @@
     box-sizing: border-box;
 }
 
+/* Scrollbar personalizada (para navegadores WebKit) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color-dark);
+}
+
 /* Estilos Globais */
 body {
-    font-family: var(--font-family-base);
+    font-family: var(--font-family-primary), var(--font-family-base);
     background-color: var(--text-light); /* Fundo branco */
     color: var(--text-dark);
     line-height: 1.6;
     scroll-behavior: smooth;
+    font-size: var(--font-size-base);
 }
 
 /* Cabeçalho */
@@ -55,7 +89,7 @@ header {
 .logo {
     color: var(--text-light);
     font-size: 28px;
-    font-weight: bold;
+    font-weight: 700; /* Poppins Bold */
 }
 
 .menu {
@@ -67,30 +101,40 @@ header {
 .menu li a {
     color: var(--text-light);
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-weight: 600; /* Poppins Semi-Bold */
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: var(--spacing-xs); /* Para a borda inferior do item ativo */
 }
 
-.menu li a:hover {
+.menu li a:hover,
+.menu li a.active { /* Estilo para o item de menu ativo */
     color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
 }
 
 /* Seção Hero */
 .hero {
-    background: linear-gradient(to right, #e9d5ff, #f8f0ff);
+    /* Degradê com um toque mais vibrante */
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%); 
     text-align: center;
     padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.hero-content {
+    /* A animação inicial de fade-in agora será controlada pelo AOS no JS */
 }
 
 .hero h2 {
     color: var(--primary-color);
     font-size: 2.8rem;
     margin-bottom: var(--spacing-sm);
+    font-weight: 700; /* Poppins Bold */
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: var(--font-size-lg);
     color: #555;
+    min-height: 2em; /* Garante espaço para o texto digitado sem layout shift */
 }
 
 .btn {
@@ -101,11 +145,12 @@ header {
     color: var(--text-light);
     border-radius: 30px;
     text-decoration: none;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .btn:hover {
     background-color: var(--primary-color-dark);
+    transform: translateY(-2px); /* Pequeno efeito de "pular" no hover */
 }
 
 /* Seções Gerais */
@@ -113,21 +158,34 @@ header {
     padding: var(--spacing-lg) var(--spacing-md);
     max-width: 1000px;
     margin: auto;
+    /* Certifique-se de que essas seções estão com display: block; ou não têm display: none; */
+    display: block; /* Garante que as seções sejam exibidas */
 }
 
 .section h2 {
     color: var(--primary-color);
-    font-size: 2rem;
+    font-size: var(--font-size-xl);
     margin-bottom: var(--spacing-md);
     border-bottom: 2px solid var(--secondary-color);
     padding-bottom: var(--spacing-xs);
+    font-weight: 600; /* Poppins Semi-Bold */
 }
+
+/* Ajusta espaçamento entre parágrafos para consistência */
+.section p {
+    margin-bottom: var(--spacing-md);
+}
+
+.section p:last-of-type {
+    margin-bottom: 0;
+}
+
 
 /* Seção de Projetos - Grid */
 .projetos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-md); /* Espaçamento entre os cards */
+    gap: var(--spacing-md);
     margin-top: var(--spacing-md);
 }
 
@@ -137,16 +195,18 @@ header {
     padding: var(--spacing-md);
     border-left: 5px solid var(--accent-color);
     border-radius: 8px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transições para hover */
-    display: flex; /* Para organizar o conteúdo do card */
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease;
+    display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Empurra os links para o final */
+    justify-content: space-between;
+    border: 1px solid transparent; /* Borda inicial transparente */
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Move o card ligeiramente para cima */
-    box-shadow: 0 8px 15px rgba(0,0,0,0.15); /* Aumenta a sombra */
+    transform: translateY(-7px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent-color); /* Borda fina da cor de destaque */
 }
 
 .card h3 {
@@ -166,18 +226,20 @@ header {
 
 .card a {
     display: inline-block;
-    margin-right: var(--spacing-sm); /* Espaço entre os botões */
-    margin-top: var(--spacing-sm); /* Espaço acima dos botões */
+    margin-right: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
     padding: 8px 20px;
     background-color: var(--accent-color);
     color: var(--text-light);
     text-decoration: none;
     border-radius: 4px;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
+    white-space: nowrap; /* Evita que o texto do botão quebre em várias linhas */
 }
 
 .card a:hover {
     background-color: var(--accent-color-dark);
+    transform: translateY(-1px); /* Pequeno efeito de "pular" */
 }
 
 .card a i { /* Estilo para ícones dentro dos links */
@@ -186,13 +248,19 @@ header {
 
 /* Seção de Contato */
 .section#contato p {
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.section#contato p:last-of-type {
+    margin-bottom: 0;
 }
 
 .section#contato a {
     color: var(--primary-color);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    display: inline-flex; /* Permite alinhar ícone e texto */
+    align-items: center;
 }
 
 .section#contato a:hover {
@@ -214,6 +282,43 @@ footer {
     margin-top: 40px;
 }
 
+/* Botão Voltar ao Topo */
+#backToTopBtn {
+    display: none; /* Escondido por padrão, será exibido pelo JS */
+    position: fixed; /* Fixado na tela */
+    bottom: 30px; /* Distância do fundo */
+    right: 30px; /* Distância da direita */
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 50%; /* Torna-o redondo */
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    justify-content: center; /* Centraliza o ícone horizontalmente */
+    align-items: center; /* Centraliza o ícone verticalmente */
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    z-index: 999; /* Garante que fique acima de outros elementos */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-decoration: none; /* Remove sublinhado do link */
+    opacity: 0; /* Inicia invisível para transição suave */
+    pointer-events: none; /* Não interage quando invisível */
+}
+
+/* Classe adicionada por JavaScript para mostrar o botão */
+#backToTopBtn.show {
+    display: flex; /* Exibe o botão quando a classe 'show' é adicionada */
+    opacity: 1;
+    pointer-events: auto; /* Permite interação quando visível */
+}
+
+#backToTopBtn:hover {
+    background-color: var(--primary-color-dark);
+    opacity: 0.9;
+}
+
+
 /* Media Queries para Responsividade */
 @media (max-width: 1024px) {
     .navbar {
@@ -221,6 +326,9 @@ footer {
     }
     .hero h2 {
         font-size: 2.5rem;
+    }
+    .section h2 {
+        font-size: 1.8rem;
     }
 }
 
@@ -251,7 +359,7 @@ footer {
     }
 
     .section h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .projetos-grid {
@@ -260,6 +368,13 @@ footer {
 
     .card {
         margin-bottom: var(--spacing-md); /* Espaçamento entre cards no mobile */
+    }
+    #backToTopBtn {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
     }
 }
 
@@ -274,5 +389,10 @@ footer {
 
     .logo {
         font-size: 24px;
+    }
+
+    .card a {
+        padding: 8px 15px; /* Ajuste o padding dos botões do card em telas muito pequenas */
+        font-size: 0.9rem;
     }
 }
