@@ -1,153 +1,491 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfólio - Emilly Cristina</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfólio - Emilly Cristina</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #b48cd2; /* Your main purple */
+      --secondary-color: #9b6ac1; /* Darker purple for hover */
+      --light-bg-color: #f7f3fc; /* Light purple background */
+      --text-color: #333;
+      --white-color: #fff;
+      --card-bg-color: #f9f9f9;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+    }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      background-color: #fff;
-      color: #333;
-    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    header {
-      background-color: #b48cd2;
-      color: white;
-      padding: 1rem;
-    }
+    html {
+      scroll-behavior: smooth;
+    }
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      background-color: var(--white-color);
+      color: var(--text-color);
+      overflow-x: hidden; /* Prevent horizontal scroll due to menu animation */
+    }
 
-    .menu {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
+    header {
+      background-color: var(--primary-color);
+      color: var(--white-color);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px var(--shadow-color);
+    }
 
-    .menu li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
 
-    .hero {
-      background-color: #f7f3fc;
-      padding: 3rem 1rem;
-      text-align: center;
-    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
 
-    .sobre, .projetos, .contato {
-      padding: 2rem 1rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
 
-    .projetos h2, .sobre h2, .contato h2 {
-      margin-bottom: 1rem;
-    }
+    .menu li a {
+      color: var(--white-color);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 0;
+      position: relative;
+      transition: color 0.3s ease;
+    }
 
-    .card {
-      background-color: #f9f9f9;
-      padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      margin-bottom: 1rem;
-    }
+    .menu li a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--white-color);
+      transition: width 0.3s ease;
+    }
 
-    .card a {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.5rem 1rem;
-      background-color: #b48cd2;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background-color 0.3s;
-    }
+    .menu li a:hover::after {
+      width: 100%;
+    }
 
-    .card a:hover {
-      background-color: #9b6ac1;
-    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
 
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #b48cd2;
-      color: white;
-      margin-top: 2rem;
-    }
-  </style>
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: var(--white-color);
+      margin-bottom: 4px;
+      border-radius: 5px;
+    }
+
+    .hero {
+      background-color: var(--light-bg-color);
+      padding: 4rem 1rem;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 70vh;
+      flex-direction: column;
+    }
+
+    .hero-content h2 {
+      font-size: 2.8rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-content p {
+      font-size: 1.4rem;
+      color: var(--text-color);
+      opacity: 0.9;
+    }
+
+    section {
+      padding: 4rem 1rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 2.2rem;
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    section h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background-color: var(--secondary-color);
+      margin: 10px auto 0;
+      border-radius: 5px;
+    }
+
+    .sobre p {
+      margin-bottom: 1rem;
+      text-align: justify;
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+
+    .projetos .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: var(--card-bg-color);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px var(--shadow-color);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .card p {
+      margin-bottom: 1.5rem;
+      flex-grow: 1; /* Allows paragraph to take available space */
+    }
+
+    .card a {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background-color: var(--primary-color);
+      color: var(--white-color);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      border: none; /* Ensure no default button border if used as button */
+    }
+
+    .card a:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .skill-item {
+      background-color: var(--light-bg-color);
+      color: var(--primary-color);
+      padding: 0.7rem 1.2rem;
+      border-radius: 20px;
+      font-weight: 600;
+      border: 1px solid var(--primary-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .skill-item:hover {
+      background-color: var(--primary-color);
+      color: var(--white-color);
+    }
+
+    .contato-content {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .contato-content p {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contato-content a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .contato-content a:hover {
+      color: var(--secondary-color);
+    }
+
+    .copy-email-btn {
+      background-color: var(--primary-color);
+      color: var(--white-color);
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .copy-email-btn:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: var(--primary-color);
+      color: var(--white-color);
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        padding: 1rem 0;
+        text-align: center;
+        box-shadow: 0 5px 10px var(--shadow-color);
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-out;
+      }
+
+      .menu.active {
+        display: flex;
+        transform: translateY(0);
+      }
+
+      .menu li {
+        margin: 0.5rem 0;
+      }
+
+      .menu li a {
+        padding: 0.8rem 1rem;
+        display: block;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero-content h2 {
+        font-size: 2.2rem;
+      }
+
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+
+      section {
+        padding: 3rem 1rem;
+      }
+
+      section h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h2 {
+        font-size: 1.8rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      .card {
+        padding: 1.5rem;
+      }
+
+      .copy-email-btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <header>
-    <nav>
-      <h1 class="logo">🌸 Emilly Cristina</h1>
-      <ul class="menu">
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+  <header>
+    <nav>
+      <h1 class="logo">🌸 Emilly Cristina</h1>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="menu" id="menu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#skills">Habilidades</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Olá! Eu sou Emilly Cristina 💻</h2>
-      <p>Estudante | Apaixonada por Criatividade, Tecnologia e Design</p>
-    </div>
-  </section>
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Olá! Eu sou Emilly Cristina 💻</h2>
+      <p>Estudante | Apaixonada por Criatividade, Tecnologia e Design</p>
+    </div>
+  </section>
 
-  <section id="sobre" class="sobre">
-    <h2>✨ Sobre Mim</h2>
-    <p>
-      Me chamo Emilly Cristina e sou apaixonada por criatividade, natureza e tecnologia. Desde pequena, sempre fui curiosa, observadora e criativa gostava de desenhar, escrever e transformar ideias em algo bonito e com significado.
-    </p>
-    <p>
-      Tenho interesse em design, desenvolvimento web e tudo que envolve expressão visual e comunicação. Acredito que a tecnologia pode ser usada para aproximar pessoas, facilitar a vida e transmitir emoções.
-    </p>
-    <p>
-      No tempo livre, gosto de ouvir música, desenhar, refletir, estar em contato com a natureza e os animais. Valorizo a empatia, a simplicidade e o crescimento pessoal.
-    </p>
-    <p>
-      Meu objetivo é crescer com verdade, criatividade e propósito, criando projetos com alma, significado e impacto positivo.
-    </p>
-  </section>
+  <section id="sobre" class="sobre">
+    <h2>✨ Sobre Mim</h2>
+    <p>
+      Me chamo Emilly Cristina e sou apaixonada por criatividade, natureza e tecnologia. Desde pequena, sempre fui curiosa, observadora e criativa, gostava de desenhar, escrever e transformar ideias em algo bonito e com significado.
+    </p>
+    <p>
+      Tenho interesse em **design**, **desenvolvimento web** e tudo que envolve expressão visual e comunicação. Acredito que a tecnologia pode ser usada para aproximar pessoas, facilitar a vida e transmitir emoções.
+    </p>
+    <p>
+      No tempo livre, gosto de ouvir música, desenhar, refletir, estar em contato com a natureza e os animais. Valorizo a empatia, a simplicidade e o crescimento pessoal.
+    </p>
+    <p>
+      Meu objetivo é crescer com verdade, criatividade e propósito, criando projetos com alma, significado e impacto positivo.
+    </p>
+  </section>
 
-  <section id="projetos" class="projetos">
-    <h2>🛠️ Meu Projeto</h2>
+  ---
 
-    <div class="card">
-      <h3>Portfólio Online</h3>
-      <p>Este é um site criado com HTML e CSS, feito para mostrar meu trabalho como desenvolvedora iniciante. Ele apresenta uma estrutura simples, bonita e organizada.</p>
-      <a href="https://emillycristina2.github.io/trabalho01/" target="_blank">🔗 Ver Projeto</a>
-    </div>
-  </section>
+  <section id="skills" class="skills">
+    <h2>🚀 Habilidades</h2>
+    <p style="text-align: center; margin-bottom: 2rem;">Aqui estão algumas das habilidades que venho desenvolvendo:</p>
+    <div class="skills-list">
+      <span class="skill-item"><i class="fab fa-html5"></i> HTML5</span>
+      <span class="skill-item"><i class="fab fa-css3-alt"></i> CSS3</span>
+      <span class="skill-item"><i class="fas fa-palette"></i> Design Responsivo</span>
+      <span class="skill-item"><i class="fas fa-paint-brush"></i> UI/UX Básico</span>
+      <span class="skill-item"><i class="fas fa-lightbulb"></i> Criatividade</span>
+      <span class="skill-item"><i class="fas fa-handshake"></i> Colaboração</span>
+      <span class="skill-item"><i class="fas fa-book"></i> Aprendizado Contínuo</span>
+          </div>
+  </section>
 
-  <section id="contato" class="contato">
-    <h2>📧 Contato</h2>
-    <p>Email: <a href="mailto:emillycristinafernandes779@gmail.com">emillycristinafernandes779@gmail.com</a></p>
-  </section>
+  ---
 
-  <footer>
-    <p>© 2025 Emilly Cristina. Todos os direitos reservados.</p>
-  </footer>
+  <section id="projetos" class="projetos">
+    <h2>🛠️ Meus Projetos</h2>
+
+    <div class="grid-container">
+      <div class="card">
+        <h3>Portfólio Online</h3>
+        <p>Este é um site criado com HTML e CSS, feito para mostrar meu trabalho como desenvolvedora iniciante. Ele apresenta uma estrutura simples, bonita e organizada.</p>
+        <a href="https://emillycristina2.github.io/trabalho01/" target="_blank">
+          <i class="fas fa-external-link-alt"></i> Ver Projeto
+        </a>
+      </div>
+
+                </div>
+  </section>
+
+  ---
+
+  <section id="contato" class="contato">
+    <h2>📧 Contato</h2>
+    <div class="contato-content">
+      <p>Gostaria de se conectar ou conversar sobre um projeto?</p>
+      <p>Sinta-se à vontade para me enviar um e-mail!</p>
+      <button class="copy-email-btn" onclick="copyEmail()">
+        <i class="fas fa-copy"></i> Copiar E-mail
+      </button>
+      <span id="emailMessage" style="color: var(--primary-color); margin-top: 0.5rem;"></span>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Emilly Cristina. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+        // Close menu on click for mobile
+        const menu = document.getElementById('menu');
+        if (menu.classList.contains('active')) {
+          menu.classList.remove('active');
+        }
+      });
+    });
+
+    // Hamburger menu functionality
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+
+    // Function to copy email address
+    function copyEmail() {
+      const email = "emillycristinafernandes779@gmail.com";
+      navigator.clipboard.writeText(email).then(() => {
+        const messageSpan = document.getElementById('emailMessage');
+        messageSpan.textContent = 'E-mail copiado!';
+        setTimeout(() => {
+          messageSpan.textContent = '';
+        }, 2000);
+      }).catch(err => {
+        console.error('Falha ao copiar o e-mail:', err);
+      });
+    }
+  </script>
 
 </body>
 </html>
