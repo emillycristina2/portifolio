@@ -5,28 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="Portfólio de Emilly Cristina - Estudante de desenvolvimento web e design, apaixonada por criar experiências digitais significativas.">
     <title>Portfólio - Emilly Cristina</title>
-    
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://unpkg.com">
 
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
-    
+    <!-- Pré-conexão e fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos e bibliotecas externas -->
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 <body>
-
     <header>
         <nav class="navbar" aria-label="Navegação Principal do Portfólio">
             <h1 class="logo">Emilly Cristina</h1>
             <ul class="menu">
-                <li><a href="#inicio" aria-label="Navegar para a seção Início">Início</a></li>
-                <li><a href="#sobre" aria-label="Navegar para a seção Sobre Mim">Sobre</a></li>
-                <li><a href="#projetos" aria-label="Navegar para a seção Meus Projetos">Projetos</a></li>
-                <li><a href="#contato" aria-label="Navegar para a seção Contato">Contato</a></li>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -36,52 +34,43 @@
             <div class="hero-content">
                 <h2 id="hero-heading">Olá, eu sou Emilly Cristina</h2>
                 <p><span id="typed-text"></span></p> 
-                <a href="#projetos" class="btn" aria-label="Ver Meus Projetos de desenvolvimento web">Ver Meus Projetos</a>
+                <a href="#projetos" class="btn">Ver Meus Projetos</a>
             </div>
         </section>
 
-        <section id="sobre" class="section" data-aos="fade-up" aria-labelledby="sobre-titulo">
-            <h2 id="sobre-titulo">Sobre Mim</h2>
-            <p>
-                Sou uma jovem sonhadora e apaixonada por criatividade. Desde pequena me interesso por artes, natureza e tecnologia.
-                Gosto de desenhar, explorar novas ideias e aprender algo novo todos os dias.
-            </p>
-            <p>
-                Atualmente, estudo desenvolvimento web e estou aprendendo a criar sites bonitos, funcionais e com significado. Acredito que a tecnologia pode transformar o mundo e quero fazer parte disso.
-            </p>
-            <p>
-                No tempo livre, gosto de ouvir música, estar em contato com os animais e refletir sobre a vida. Busco sempre crescer com empatia, verdade e propósito.
-            </p>
+        <section id="sobre" class="section" data-aos="fade-up">
+            <h2>Sobre Mim</h2>
+            <p>Sou uma jovem sonhadora e apaixonada por criatividade. Desde pequena me interesso por artes, natureza e tecnologia. Gosto de desenhar, explorar novas ideias e aprender algo novo todos os dias.</p>
+            <p>Atualmente, estudo desenvolvimento web e estou aprendendo a criar sites bonitos, funcionais e com significado. Acredito que a tecnologia pode transformar o mundo e quero fazer parte disso.</p>
+            <p>No tempo livre, gosto de ouvir música, estar em contato com os animais e refletir sobre a vida. Busco sempre crescer com empatia, verdade e propósito.</p>
         </section>
 
-        <section id="projetos" class="section projetos" data-aos="fade-up" data-aos-delay="200" aria-labelledby="projetos-titulo">
-            <h2 id="projetos-titulo">Meus Projetos</h2>
-
+        <section id="projetos" class="section projetos" data-aos="fade-up" data-aos-delay="200">
+            <h2>Meus Projetos</h2>
             <div class="projetos-grid">
                 <div class="card">
                     <h3>Portfólio Pessoal</h3>
                     <p>Site criado com HTML e CSS para apresentar minhas habilidades e projetos.</p>
                     <p class="technologies">HTML, CSS</p>
-                    <a href="https://emillycristina2.github.io/portifolio/" target="_blank" rel="noopener noreferrer" aria-label="Ver o projeto online Portfólio Pessoal">Ver Projeto <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://github.com/emillycristina2/portifolio" target="_blank" rel="noopener noreferrer" aria-label="Ver o código do Portfólio Pessoal no GitHub"><i class="fab fa-github"></i> Ver Código</a>
+                    <a href="https://emillycristina2.github.io/portifolio/" target="_blank" rel="noopener noreferrer">Ver Projeto <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://github.com/emillycristina2/portifolio" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Ver Código</a>
                 </div>
-
                 <div class="card">
                     <h3>Projeto Criativo</h3>
                     <p>Exemplo de design com tema floral e paleta de cores suave.</p>
                     <p class="technologies">HTML, CSS</p>
-                    <a href="https://emillycristina2.github.io/trabalho01" target="_blank" rel="noopener noreferrer" aria-label="Ver o projeto online Projeto Criativo">Ver Projeto <i class="fas fa-external-link-alt"></i></a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Ver o código do Projeto Criativo no GitHub"><i class="fab fa-github"></i> Ver Código</a>
+                    <a href="https://emillycristina2.github.io/trabalho01" target="_blank" rel="noopener noreferrer">Ver Projeto <i class="fas fa-external-link-alt"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Ver Código</a>
                 </div>
             </div>
         </section>
 
-        <section id="contato" class="section" data-aos="fade-up" data-aos-delay="400" aria-labelledby="contato-titulo">
-            <h2 id="contato-titulo">Contato</h2>
+        <section id="contato" class="section" data-aos="fade-up" data-aos-delay="400">
+            <h2>Contato</h2>
             <ul>
-                <li>💌 Email: <a href="mailto:emillycristinafernandes779@gmail.com" aria-label="Enviar um email para Emilly Cristina"><i class="fas fa-envelope"></i> emillycristinafernandes779@gmail.com</a></li>
-                <li>📷 Instagram: <a href="https://instagram.com/emilly_cristina" target="_blank" rel="noopener noreferrer" aria-label="Visitar perfil do Instagram de Emilly Cristina"><i class="fab fa-instagram"></i> @emilly_cristina</a></li>
-                <li>🔗 GitHub: <a href="https://github.com/emillycristina2" target="_blank" rel="noopener noreferrer" aria-label="Visitar perfil do GitHub de Emilly Cristina"><i class="fab fa-github"></i> /emillycristina2</a></li>
+                <li><i class="fas fa-envelope"></i> <a href="mailto:emillycristinafernandes779@gmail.com">emillycristinafernandes779@gmail.com</a></li>
+                <li><i class="fab fa-instagram"></i> <a href="https://instagram.com/emilly_cristina" target="_blank" rel="noopener noreferrer">@emilly_cristina</a></li>
+                <li><i class="fab fa-github"></i> <a href="https://github.com/emillycristina2" target="_blank" rel="noopener noreferrer">/emillycristina2</a></li>
             </ul>
         </section>
     </main>
@@ -90,112 +79,12 @@
         <p>© 2025 Emilly Cristina. Feito com carinho 💜</p>
     </footer>
 
-    <a href="#inicio" id="backToTopBtn" aria-label="Voltar ao topo da página" title="Voltar ao Topo">
+    <a href="#inicio" id="backToTopBtn" title="Voltar ao Topo">
         <i class="fas fa-arrow-up"></i>
     </a>
 
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script src="script.js" defer></script>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Portfólio de Emilly Cristina - Estudante de desenvolvimento web e design, apaixonada por criar experiências digitais significativas.">
-    <title>Portfólio - Emilly Cristina</title>
-    
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://unpkg.com">
-
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
-    
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-</head>
-<body>
-
-    <header>
-        <nav class="navbar" aria-label="Navegação Principal do Portfólio">
-            <h1 class="logo">Emilly Cristina</h1>
-            <ul class="menu">
-                <li><a href="#inicio" aria-label="Navegar para a seção Início">Início</a></li>
-                <li><a href="#sobre" aria-label="Navegar para a seção Sobre Mim">Sobre</a></li>
-                <li><a href="#projetos" aria-label="Navegar para a seção Meus Projetos">Projetos</a></li>
-                <li><a href="#contato" aria-label="Navegar para a seção Contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero" id="inicio" aria-labelledby="hero-heading">
-            <div class="hero-content">
-                <h2 id="hero-heading">Olá, eu sou Emilly Cristina</h2>
-                <p><span id="typed-text"></span></p> 
-                <a href="#projetos" class="btn" aria-label="Ver Meus Projetos de desenvolvimento web">Ver Meus Projetos</a>
-            </div>
-        </section>
-
-        <section id="sobre" class="section" data-aos="fade-up" aria-labelledby="sobre-titulo">
-            <h2 id="sobre-titulo">Sobre Mim</h2>
-            <p>
-                Sou uma jovem sonhadora e apaixonada por criatividade. Desde pequena me interesso por artes, natureza e tecnologia.
-                Gosto de desenhar, explorar novas ideias e aprender algo novo todos os dias.
-            </p>
-            <p>
-                Atualmente, estudo desenvolvimento web e estou aprendendo a criar sites bonitos, funcionais e com significado. Acredito que a tecnologia pode transformar o mundo e quero fazer parte disso.
-            </p>
-            <p>
-                No tempo livre, gosto de ouvir música, estar em contato com os animais e refletir sobre a vida. Busco sempre crescer com empatia, verdade e propósito.
-            </p>
-        </section>
-
-        <section id="projetos" class="section projetos" data-aos="fade-up" data-aos-delay="200" aria-labelledby="projetos-titulo">
-            <h2 id="projetos-titulo">Meus Projetos</h2>
-
-            <div class="projetos-grid">
-                <div class="card">
-                    <h3>Portfólio Pessoal</h3>
-                    <p>Site criado com HTML e CSS para apresentar minhas habilidades e projetos.</p>
-                    <p class="technologies">HTML, CSS</p>
-                    <a href="https://emillycristina2.github.io/portifolio/" target="_blank" rel="noopener noreferrer" aria-label="Ver o projeto online Portfólio Pessoal">Ver Projeto <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://github.com/emillycristina2/portifolio" target="_blank" rel="noopener noreferrer" aria-label="Ver o código do Portfólio Pessoal no GitHub"><i class="fab fa-github"></i> Ver Código</a>
-                </div>
-
-                <div class="card">
-                    <h3>Projeto Criativo</h3>
-                    <p>Exemplo de design com tema floral e paleta de cores suave.</p>
-                    <p class="technologies">HTML, CSS</p>
-                    <a href="https://emillycristina2.github.io/trabalho01" target="_blank" rel="noopener noreferrer" aria-label="Ver o projeto online Projeto Criativo">Ver Projeto <i class="fas fa-external-link-alt"></i></a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Ver o código do Projeto Criativo no GitHub"><i class="fab fa-github"></i> Ver Código</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="contato" class="section" data-aos="fade-up" data-aos-delay="400" aria-labelledby="contato-titulo">
-            <h2 id="contato-titulo">Contato</h2>
-            <ul>
-                <li>💌 Email: <a href="mailto:emillycristinafernandes779@gmail.com" aria-label="Enviar um email para Emilly Cristina"><i class="fas fa-envelope"></i> emillycristinafernandes779@gmail.com</a></li>
-                <li>📷 Instagram: <a href="https://instagram.com/emilly_cristina" target="_blank" rel="noopener noreferrer" aria-label="Visitar perfil do Instagram de Emilly Cristina"><i class="fab fa-instagram"></i> @emilly_cristina</a></li>
-                <li>🔗 GitHub: <a href="https://github.com/emillycristina2" target="_blank" rel="noopener noreferrer" aria-label="Visitar perfil do GitHub de Emilly Cristina"><i class="fab fa-github"></i> /emillycristina2</a></li>
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2025 Emilly Cristina. Feito com carinho 💜</p>
-    </footer>
-
-    <a href="#inicio" id="backToTopBtn" aria-label="Voltar ao topo da página" title="Voltar ao Topo">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    <script src="script.js" defer></script>
-
 </body>
 </html>
